@@ -1,0 +1,143 @@
+.full{
+	width:100%;
+	height:100%;
+}
+.header{
+	background-color:#ffffff;
+  width:100%;
+ height:100px;
+ margin:0px;
+}
+
+.btdangnhap{
+	border-radius:10px;
+	padding:10px;
+	background-color:#ccc;
+	border:1px solid #026987;
+	margin:10px;
+	display:block;
+}
+
+.logo{
+	width:auto;
+	margin-left:50px;
+}
+
+.hotline{
+	margin-top:10px;
+	float:right;
+	margin-left:10px;
+}
+
+.hotline-text{
+margin-right: 4px;
+color: #026987;
+font-weight: 700;
+text-align: center;
+border-bottom: 1px solid #026987;
+
+}
+.hotline-top{
+color: #026987;
+font-size: 40px;
+font-weight: 700;
+
+}
+#menu li {
+font-size:20px;
+  color: #f1f1f1;
+  display: inline-block;
+
+
+  height: 50px;
+  line-height: 50px;
+  
+}
+#menu ul {
+	height:50px;
+   background: #1F568B;
+  list-style-type: none;
+  
+  text-align: center;
+}
+#menu a {
+	padding : 0 30px;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+#menu a:hover {
+  background: #F1F1F1;
+  color: #333;
+}
+/*phan card*/
+
+.phantren{
+	width:100%;
+	height:auto;
+	
+	
+	
+}
+.banner{
+	width:100%;
+	height:auto;
+	background-color: rgba(0,0,0,0);
+}
+.phantintuc{
+	width:100%;
+	height:auto;
+}
+
+.content{
+	margin-top:5px;
+	width:100%;
+	height:480px;
+	background-color:#E6E6E6;
+	
+}
+.content_left{
+	width:40%;
+	height:400px;
+	float:left;
+	
+margin-left:160px;
+}
+.content_right{
+	width:50%;
+	height:500px;
+	float:right;
+	
+	
+	
+
+}
+.tintuc{
+	padding-top:0px;
+	width:100%;
+	height:auto;
+	background-size:100%;
+	background-image:url("../hinhanh/backgroup.jpg");
+	background-repeat:no-repeat;
+}
+.new{
+	width:100px;
+	height:100px;
+	background:#ffffff;
+}
+.phanduoi{
+	width:100%;
+	height:300px;
+
+}
+.logodoitac{
+	width:100%;
+	height:134px;
+	background-color:#ffffff;
+	
+}
+.footer{
+		background-color:#00FFFF;
+		
+}
+

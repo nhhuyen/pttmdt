@@ -9,7 +9,8 @@
 					include('giaodien/formlienhe.php');
 				}elseif($tam == 'dangnhap'){
 					include('giaodien/login/dangnhap.php');
-					 session_start();
+				}elseif($tam == 'huongdandatve'){
+					include('giaodien/huongdandatve.php');	 
 				}elseif($tam == 'dangky'){
 					include('giaodien/login/dangky.php');
 				}elseif($tam == 'dangkymoi'){

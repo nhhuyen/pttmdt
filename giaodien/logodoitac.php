@@ -3,12 +3,13 @@
 <style type="text/css">
  #logo1{
 	 width:100%;
+	 margin-top:10px;
 	 background-color:#ffffff;
  }
  #logo1 ul {
 	height:50px;
   list-style-type: none;
-  
+  margin-top:10px;
   text-align: center;
 }
 #logo1 li {
@@ -32,14 +33,14 @@
 	margin-left:200px;
 	color:#000000;
     font-size: 20px;
-
+	margin-bottom:10px;
 			
 }
 </style>
 </head>
 </body>
-<div id="logo1">
-<p div id="tenlogo">Đối tác hàng không <img src="hinhanh/logo/icon_maybay.png" width="40px"/></p>
+<div style='margin-top:10px;' id="logo1">
+<p div id="tenlogo">Đối tác hàng không</p>
 <p div id="tendonglogo">Những đối tác hàng không toàn cầu sẽ chắp cánh đưa bạn đến mọi địa điểm trên thế giới</p>
   <ul>
                             <li><a><img src="hinhanh/logo/jq.png" alt=""></a> </li>
@@ -63,11 +64,7 @@
 						  <li><a><img src="hinhanh/logo/kq.png" alt=""></a></li>
 						   <li><a><img src="hinhanh/logo/jq.png" alt=""></a></li>
 						 </ul>
-						 
-                        
-                     
-                     
-						 </div>
-						 
+                
+</div>						 
 </body>
 </html>

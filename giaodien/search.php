@@ -8,9 +8,11 @@
 			padding-top:25px;
 			width:100%;
 			display:flex;
-			background-image:url(hinhanh/banner.png);
+			background-image:url(hinhanh/banner3.png);
 			height:450px;
 			background-size:100%;
+			background-repeat:no-repeat;
+			
 		}
 		
 		.tieudecb{
@@ -18,6 +20,7 @@
 			margin:auto;
 			text-align:center;
 			padding-bottom:7px;
+			color: white;
 		} 
 		
 		.tieudecb img{
@@ -32,16 +35,17 @@
 			padding-top:7px;
 		}
 		.tieude{
-			font-size:20px;
-			color:red;
+			font-size:18px;
+			
 			margin: 0;
+			color: white;
 		}
 		
 		.lbrd{
 			font-size:20px;
 			margin:0px 30px 0px 0px;
 			font-weight:normal;
-			font-color:red;
+			color: white;
 		}
 		
         .a{
@@ -53,7 +57,7 @@
             z-index:1;
         }
 		.table_1{
-			background-color: rgba(16,54,103,0.9);
+			background-color: rgba(114,209,233,0.7);
 			width: 520px;
 			height:395px;
 			display:block;
@@ -79,7 +83,7 @@
 		
 		.btnrd{
 			width:20px;
-			height: 20px;
+			height: 20px;			
 		}
 		
 		.search{
@@ -89,9 +93,8 @@
 			font-size: 20px;
 			font-weight:bold;
 			border-radius:10px;
-			border: 2px solid #FF0004;
-			background-color: greenyellow;
-			color: blueviolet; 
+			background-color: #00a698;
+			color: white; 
 		}
 		
     </style>
@@ -150,14 +153,15 @@
 		
 		function off_ngay_ve() {
 			document.getElementById("ngay_ve").disabled="disabled";
-			document.getElementById("ngay_ve").value= "-----------";
+			
 		}
 		function on_ngay_ve() {
 			document.getElementById("ngay_ve").disabled="";
 		}
 		function ngdi(){
-			//var ndi = document.getElementById("ngay_di").value;	
-			//document.getElementById("ngay_ve").value= ndi;
+			var ndi = document.getElementById("ngay_di").value;				
+		//	document.getElementById("ngay_ve").value=ndi;
+			$("#ngay_ve").datepicker("option", "minDate", ndi);
 		}
 	</script>
 	
@@ -241,6 +245,10 @@
     $(function() {
        $( ".datepicker" ).datepicker( $.datepicker.regional[ "vi" ] );
     });
+	$(function() {
+		$(".datepicker").datepicker("option", "minDate", 0);
+	});	
+	
 </script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
@@ -256,7 +264,7 @@
 	<div class="a">
 		<table border="0" class="table_1">
 			<tr>
-				<td colspan="6" style="border-bottom:2px solid yellow">
+				<td colspan="6" style="border-bottom:2px solid #00a698">
 					<p class="tieudecb"><img src="" />TÌM CHUYẾN BAY</p>
 				</td>
 			</tr>
@@ -281,64 +289,64 @@
 			</tr>
 			<tr>
 			  	<td colspan="3">
-					<p class="tieude">TỪ:</p>	
+					<p class="tieude">Từ:</p>	
 					<input class="box" name="san_bay_di" id="san_bay_di" placeholder="Thành phố đi" requiped>
 				</td>
 				<td colspan="3">
-					<p class="tieude">ĐẾN:</p>
+					<p class="tieude">Đến:</p>
 					<input class="box" name="san_bay_den" id="san_bay_den" placeholder="Thành phố đến" requiped>
 				</td>
 			</tr>
 			<tr>	
 				<td colspan="3">
-					<p class="tieude">KHỞI HÀNH:</p>
-					<input type="text" name="ngay_di" onchange="ngdi()" class="datepicker" autocomplete="off" requiped>
+					<p class="tieude">Khởi Hành:</p>
+					<input type="text" name="ngay_di" id="ngay_di" class="datepicker" onchange="ngdi()" autocomplete="off" requiped>
 				</td>
 				<td colspan="3">
-					<p class="tieude">VỀ:</p>
-						<input type="text"  name="ngay_ve" class="datepicker" autocomplete="off" disabled="disabled" id="ngay_ve" value="-----------">
+					<p class="tieude">Về:</p>
+						<input type="text"  name="ngay_ve" class="datepicker" autocomplete="off" disabled="disabled" id="ngay_ve">
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<p class="tieude">NGƯỜI LỚN:</p> 
+					<p class="tieude">Người lớn:</p> 
 					<div style="width:auto;margin:0px;padding:0px;" class="container"> 
 					 <div class="row"> 
 					  <div class="col-md-3"> 
 					   <div class="input-group"> 
 							<span class="input-group-btn">
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
-							<input  style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 1px;border:1px;" name="quant[1]" class="form-control input-number" value="1" min="1" max="10" type="text" autocomplete="off"> 
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant1"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
+							<input  style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 1px;border:1px;color: white;text-align:center;" name="quant1" class="form-control input-number" value="0" min="0" max="10" type="text" autocomplete="off"> 
 							<span class="input-group-btn">    
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant1"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
 					   </div> 
 					  </div> 
 					 </div>
 					</div>
 				</td>
 				<td colspan="2">
-					<p class="tieude">TRẺ EM:</p> 
+					<p class="tieude">Trẻ em:</p> 
 					<div style="width:auto;margin:0px;padding:0px;" class="container"> 
 					 <div class="row"> 
 					  <div class="col-md-3"> 
 					   <div class="input-group"> <span class="input-group-btn">
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[2]"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
-							<input style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 2px;border:1px;" name="quant[2]" class="form-control input-number" value="0" min="0" max="10" type="text" autocomplete="off"> <span class="input-group-btn">    
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant2"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
+							<input style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 2px;border:1px;color: white;text-align:center; " name="quant2" class="form-control input-number" value="0" min="0" max="10" type="text" autocomplete="off"> <span class="input-group-btn">    
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant2"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
 					   </div> 
 					  </div> 
 					 </div>
 					</div>
 				</td>
 				<td colspan="2">
-					<p class="tieude">EM BÉ:</p>
+					<p class="tieude">Em bé:</p>
 					<div style="width:auto;margin:0px;padding:0px;z-index:1;position:relative;" class="container"> 
 					 <div class="row"> 
 					  <div class="col-md-3"> 
 					   <div class="input-group"> <span class="input-group-btn">
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[3]"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
-							<input style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 1px;border:1px;" name="quant[3]" class="form-control input-number" value="0" min="0" max="10" type="text" autocomplete="off"> <span class="input-group-btn">    
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[3]"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant3"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
+							<input style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 1px;border:1px;color: white;text-align:center;" name="quant3" class="form-control input-number" value="0" min="0" max="4" type="text" autocomplete="off"> <span class="input-group-btn">    
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant3"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
 					   </div> 
 					  </div> 
 					 </div>
@@ -364,7 +372,7 @@
 			$sql="select * from banner;";
 			$result=mysql_query($sql,$conn) or die(mysql_error());
 			while($row=mysql_fetch_array($result)){
-				echo '<li class="images-list" data-slider="'.$row["bn_ma"].'" style="background-image: url(http://'.$row["bn_hinh"].')"></li>';
+				echo '<li class="images-list" data-slider="'.$row["bn_ma"].'" style="background-image: url('.$row["bn_hinh"].')"></li>';
 			}
 			$dong=mysql_num_rows($result);
 		?>

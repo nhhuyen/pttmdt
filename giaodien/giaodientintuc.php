@@ -1,7 +1,7 @@
 <div  class="tintuc">
 <p id="tenndtintuc">Nội dung tin tức</p>
 <center><hr width="20%" size="5px" color="#ff8000"/></center>
-<a class="xtc" href="#">Xem tất cả</a>
+
 <div class="clearFix">
 <?php
 include('admin/modules/connect.php');

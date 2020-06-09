@@ -24,6 +24,19 @@ div {
 			margin: 0;
 		}
 		
+		.lb_socho{
+			margin-top:7px;
+			font-size:17px;
+			margin-left:460px
+		}
+		
+		.socho{
+			font-size:17px;
+			margin-top:7px;
+			color:red;
+			font-weight:bold;
+		}
+		
 		.lbrd{
 			font-size:20px;
 			margin:0px 30px 0px 0px;
@@ -67,18 +80,7 @@ div {
 			width:20px;
 			height: 20px;
 		}
-		
-		.search{
-			margin:17px 0px;
-			width: 180px;
-			height:42px;
-			font-size: 20px;
-			font-weight:bold;
-			border-radius:10px;
-			border: 2px solid #FF0004;
-			background-color: greenyellow;
-			color: blueviolet; 
-		}
+				
 
 .content{
 	width:1400px;
@@ -99,10 +101,15 @@ div {
 	width:90%;
 	margin: auto;
 	margin-top:10px;
-	margin-left: 5px;
+	margin-left: 0px;
 	margin-right: 5px;
     border:1px solid #b3edfc;
 	border-collapse: separate;	
+}
+
+.tb td{
+	padding-left:10px;
+	padding-bottom:3px;
 }
 
 .cd{
@@ -113,7 +120,7 @@ div {
 	width:90%;
 	margin: 0 auto;
 	margin-top:10px;
-	margin-left: 5px;
+	margin-left: 0px;
 	margin-right: 5px;
     border:1px solid #b3edfc;
 	border-collapse: separate;	
@@ -136,6 +143,8 @@ div {
 }
 
 .time{
+	padding-top:10px;
+	margin-top:0px;
 	font-size:23px;
 }
 
@@ -143,7 +152,7 @@ div {
 	width:25px;
 	height:25px;
 	margin-right:5px;
-	margin-top:2px;
+	margin-top:0px;
 }
 
 .btn-chitiet{
@@ -273,6 +282,7 @@ a {
     color: #fb7604;
 	font-size:23px;
 	padding:0px;
+	padding-top:20px;
     /*text-align: right;*/
 }
 
@@ -312,6 +322,7 @@ a {
 
 .flight-detail .airport {
 	padding:3px;
+	padding-left:0px;
     font-size: 17px;
     line-height: 14px;
 }
@@ -356,22 +367,19 @@ a {
 .hotline{
 	margin-top:10px;
 	float:right;
-	margin-left:10px;
 }
 
 .hotline-text{
+margin-top:10px;
 margin-right: 4px;
-color: #026987;
+color: #00a698;
 font-weight: 700;
 text-align: center;
-border-bottom: 1px solid #026987;
-
+border-bottom: 1px solid #00a698;
 }
 .hotline-top{
-color: #026987;
-font-size: 40px;
-font-weight: 700;
-
+color: #00a698;
+font-size: 25px;
 }
 #menu li {
 font-size:20px;
@@ -401,7 +409,19 @@ font-size:20px;
   color: #333;
 }
 /*phan card*/
-
+.km{
+	position:absolute;
+	font-size:15px;
+	color:white;
+	background-color:red;
+	border-radius:7px;
+}
+.giagoc{
+	margin-left:60px;
+	position:absolute;
+	font-size:15px;
+	text-decoration: line-through;
+}
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
@@ -436,5 +456,4 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-size: 100%;
     line-height: inherit;
     font-family: inherit;
-    vertical-align: top;
 }

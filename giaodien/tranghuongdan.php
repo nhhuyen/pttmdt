@@ -6,7 +6,7 @@
 </style>
 </head>
 <body>
-<table style="margin:auto;" border="0">
+<table style="margin-left:110px" border="0">
 <td>
 
 <div class="full">
@@ -39,14 +39,14 @@ Hướng dẫn thanh toán
 </div>
 </div>
 </td>
-<td style="padding-left:40px">
+<td style="padding-left:50px">
 <div class="full">
 <h2>Hướng dẫn đặt vé</h2><hr>
 <div class="block-content">
 <ul class="index-list">
 <li>
 <em class="fa fa-globe"></em>
-<p class="list-head">Qua website: <a href="#">https://Smallsky.com/</a></p>
+<p class="list-head">Qua website: <a href="#">https://smallsky.com/</a></p>
 <p>Trực tiếp trên website:<br />
 Kiểm tra trực tuyến theo thời gian thực, chính xác tuyệt đối.<br />
 Trực quan, dễ dàng kiểm tra thời gian bay, giá vé.

@@ -14,22 +14,15 @@
     //Lấy dữ liệu từ file dangky.php
     $nd_taikhoan  = $_POST['txtNd_taikhoan'];
     $nd_matkhau   = $_POST['txtNd_matkhau'];
-    $nd_ten  = $_POST['txtNd_ten'];
+    $nd_ten  	  = $_POST['txtNd_ten'];
     $nd_gioitinh  = $_POST['txtNd_gioitinh'];
-    $nd_diachi     = $_POST['txtNd_diachi'];
+    $nd_diachi    = $_POST['txtNd_diachi'];
     $nd_mail      = $_POST['txtNd_mail'];
-    $nd_sdt        = $_POST['txtNd_sdt'];
-    $nd_phanquyen      =0;
+    $nd_sdt       = $_POST['txtNd_sdt'];
+    $nd_phanquyen = 0;
 
 
     
-          
-    //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-    if ($nd_taikhoan == '' || $nd_matkhau == '' || $nd_ten == ''|| $nd_gioitinh == '' || $nd_diachi == '' || $nd_mail == '' || $nd_sdt == '')
-    {
-        echo "Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a>";
-        exit;
-    }
           
         // Mã khóa mật khẩu
         $nd_matkhau = md5($nd_matkhau);
@@ -57,7 +50,8 @@
             nd_diachi,
             nd_mail,
             nd_sdt,
-            nd_phanquyen
+            nd_phanquyen,
+			nd_vip
         )
         VALUES (
             '$nd_taikhoan',
@@ -67,12 +61,10 @@
             '$nd_diachi',
             '$nd_mail',
             '$nd_sdt',
-            '$nd_phanquyen'
-        )
-    ";
+            '$nd_phanquyen',0)";
     // echo $sql;
     if($conn->query($sql)){
-       echo ". Bạn đã đăng ký thành công. <meta http-equiv='refresh' content ='1;../../?quanly=dangnhap'>";
+       echo "<meta http-equiv='refresh' content ='0;them_gh.php?&nd_taikhoan=".$nd_taikhoan."'>";
     }
-  
+	
 ?>

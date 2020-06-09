@@ -4,18 +4,36 @@
 }
 .header{
 	background-color:#ffffff;
-  width:100%;
- height:100px;
- margin:0px;
+	width:100%;
+	height:100px;
+	margin:0px;
 }
 
+.tbheader td{
+
+	padding-top:20px;
+}
+
+
 .btdangnhap{
+	width:110px;
+	margin-left:35px;
+	margin-top:5px;
 	border-radius:10px;
 	padding:10px;
 	background-color:#ccc;
-	border:1px solid #026987;
-	margin:10px;
+	border:1px solid #00a698;
+	text-decoration: none!important;
 	display:block;
+	color:#00a698;
+	font-weight:bold;
+	text-align:center;
+}
+
+.btdangnhap:hover{
+	background-color:#00a698;
+	color:white;
+	border:1px solid #ccc;
 }
 
 .logo{
@@ -24,40 +42,37 @@
 }
 
 .hotline{
-	margin-top:10px;
+	margin-top:0px;
+	margin-left:30px;
 	float:right;
-	margin-left:10px;
 }
 
 .hotline-text{
+
 margin-right: 4px;
-color: #026987;
+color: #00a698;
 font-weight: 700;
 text-align: center;
-border-bottom: 1px solid #026987;
+border-bottom: 1px solid #00a698;
 
 }
 .hotline-top{
-color: #026987;
-font-size: 40px;
-font-weight: 700;
-
+color: #00a698;
+font-size: 25px;
+margin-left:13px;
 }
 #menu li {
 font-size:20px;
   color: #f1f1f1;
   display: inline-block;
-
-
   height: 50px;
   line-height: 50px;
   
 }
 #menu ul {
 	height:50px;
-   background: #1F568B;
+   background:#007369;
   list-style-type: none;
-  
   text-align: center;
 }
 #menu a {
@@ -90,10 +105,10 @@ font-size:20px;
 }
 
 .content{
-	margin-top:5px;
+
 	width:100%;
 	height:480px;
-	background-color:#E6E6E6;
+	background-color:#f1f2f8;
 	
 }
 .content_left{
@@ -101,7 +116,7 @@ font-size:20px;
 	height:400px;
 	float:left;
 	
-margin-left:160px;
+	margin-left:160px;
 }
 .content_right{
 	width:50%;
@@ -117,7 +132,7 @@ margin-left:160px;
 	width:100%;
 	height:auto;
 	background-size:100%;
-	background-image:url("../hinhanh/backgroup.jpg");
+	background-color:#f1f2f8;
 	background-repeat:no-repeat;
 }
 .new{

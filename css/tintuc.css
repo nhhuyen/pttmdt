@@ -11,7 +11,7 @@
 }
 
 a{
-	text-decoration: none;
+	text-decoration: none!important;
 }
 
 .clearFix a.item img:hover{
@@ -19,6 +19,7 @@ a{
 	margin-bottom:20px;
 	width: 300px;
 	height: 250px;
+
 	
 }
 .clearFix a.item img{
@@ -30,39 +31,43 @@ a{
 }
 
 .clearFix a #tensp{
-	font-size:20px;
+	font-size:18px;
 	margin-bottom:5px;
-	color:#0040FF;
-	text-decoration:none;
+	color:#0b8bca;
+	text-decoration: none!important;
+	height:50px;
+	font-weight:700;
 }
 
-.clearFix a #tensp:hover{
-	color: aqua;
-	
-}
+
 .clearFix a #noidung{
 	height:37px;
 	font-size:15px;
 	margin-bottom:5px;
 	color:black;
 	overflow:hidden;padding-left:5px;
+	text-decoration: none!important;
 }
 .clearFix a #xemthem{
 	font-size:20px;
 	float:right;
+	margin-top:10px;
 	margin-right:10px;
 	margin-bottom:5px;
-	color:#0040FF;
+	color:#0b8bca;
 }
 .clearFix a.item{
 	height:450px;
 	width: 320px;
 	float: left;
-	border: solid 1px #ccc;
+	border: solid 1.5px white;
 	margin-left: 10px;
 	text-align: center;
 	margin-bottom: 10px;
 	background-color:white;
+}
+.clearFix a.item:hover{
+	border: solid 1.5px #0b8bca;
 }
 
 .bot {
@@ -92,9 +97,9 @@ a.ab img{
 }
 
 a.xtc{
-	color: #ff8000;
+	color: #0b8bca;
 	margin-bottom: 10px;
-	font-size:20px;
+	font-size:22px;
 	float: right;
 	margin-right: 45px;
 }
@@ -106,8 +111,8 @@ a.xtc{
 	font-weight: bold;
     }
 #tenndtintuc{
-	color:#ffffff;
+	color:#0b8bca;
 	font-size:30px;
 	text-align:center;
-
+	padding-top:10px;
 }

@@ -29,9 +29,10 @@
         -moz-border-radius: 5px;
         -ms-border-radius:5px;
         -o-border-radius: 5px;
-		
-
     }
+.txtNd_gioitinh{
+	margin-right:10px;
+}	
 </style>
 
   <title>Trang Đăng ký</title>
@@ -43,9 +44,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //custom-theme  -->
-<link rel="stylesheet" href="../login/css/style.css">
+<link rel="stylesheet" href="giaodien/login/css/style.css">
    <!-- font-awesome icons -->
-<link href="../login/css/font-awesome.css" rel="stylesheet"> 
+<link href="giaodien/login/css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
   </head>
@@ -59,48 +60,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <h2 class="login-header w3_header">Đăng ký</h2>
 				
 				    <div class="w3l_grid">
-					<img src="https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/avat-01-512.png" width="100px" style="margin-left:120px;">
+					
                         <form class="login-container" action="giaodien/login/dxuly.php" method="post">
-                             <input type="text" placeholder="Tên tài khoản" Name="txtNd_taikhoan" required="" >
-							 <input type="text" placeholder="Mật khẩu" Name="txtNd_matkhau" required="" >
-                             <input type="password" placeholder=" Nhập lại Mật khẩu" Name="txtNd_matkhau1" required="">
-							 <input type="text" placeholder="Họ và tên" Name="txtNd_ten" required="" >
+                             <input type="text" placeholder="Tên tài khoản" Name="txtNd_taikhoan" required>
+							 <input type="text" placeholder="Mật khẩu" Name="txtNd_matkhau" required>
+                             <input type="password" placeholder=" Nhập lại Mật khẩu" Name="txtNd_matkhau1" required>
+							 <input type="text" placeholder="Họ và tên" Name="txtNd_ten" required>
 					 <div class="tbgioitinh">
               
-              <label class="gioitinh">Giới tính:</label>&nbsp&nbsp
-              <input type="radio" name="txtNd_gioitinh" value="Nam"><label class="txtNd_gioitinh">Nam</label>&nbsp
-              <input type="radio" name="txtNd_gioitinh" value="Nữ"><label class="txtNd_gioitinh">Nữ</label>&nbsp
-			   <input type="radio" name="txtNd_gioitinh" value="khác"><label class="txtNd_gioitinh">Khác</label>
+              <label style="margin-right:5px;" class="gioitinh">Giới tính:</label>
+              <input type="radio" name="txtNd_gioitinh" value="Nam"><label class="txtNd_gioitinh">Nam</label>
+              <input type="radio" name="txtNd_gioitinh" value="Nữ"><label class="txtNd_gioitinh">Nữ</label>
+			
               </div>
-				 <input type="text" placeholder="Email" Name="txtNd_mail" required="" >
-				  <input type="text" placeholder="Địa chỉ" Name="txtNd_diachi" required="" >
-				   <input type="text" placeholder="Số điện thoại" Name="txtNd_sdt" required="" >
+				 <input type="text" placeholder="Email" Name="txtNd_mail" required>
+				  <input type="text" placeholder="Địa chỉ" Name="txtNd_diachi" required>
+				   <input type="text" placeholder="Số điện thoại" Name="txtNd_sdt" required>
                              <input type="submit" name="dangky" value="Đăng ký">
 							 
                         </form>
-<div class="second-section w3_section">
-     <div class="bottom-header w3_bottom">
-          <h3>Hoặc</h3>
-     </div>
-     <div class="social-links w3_social">
-         <ul>
-         <!-- facebook -->
-             <li> <a class="facebook" href="#" target="blank"><i class="fa fa-facebook"></i></a></li>
 
-         <!-- twitter -->
-             <li> <a class="twitter" href="#" target="blank"><i class="fa fa-twitter"></i></a></li>
-
-         <!-- google plus -->
-             <li> <a class="googleplus" href="#" target="blank"><i class="fa fa-google-plus"></i></a></li>
-       </ul>
-   </div>
-</div>
                  
 <div class="bottom-text w3_bottom_text">
-      <p>Bạn đã có tài khoản?<a href="?quanly=dangnhap">Đăng nhập</a></p>
-      <h4> <a href="#">Quyên mật khẩu..</a></h4>
+      <p style='margin-top:10px;'>Bạn đã có tài khoản?<a href="?quanly=dangnhap">Đăng nhập</a></p>
+      <h4> <a href="#">Quên mật khẩu?</a></h4>
 </div>
-
                   </div>
        </div>
   

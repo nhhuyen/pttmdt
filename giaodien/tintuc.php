@@ -1,6 +1,11 @@
 <html>
 <head>
 <meta charset='utf-8'>
+<?php
+	include('../modules/connect.php');
+ include('../giaodien/head/head.php');
+ include('../giaodien/head/menu.php');
+?>
 <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
 <link rel="stylesheet" type="text/css" href="../css/noidungtintuc.css">
 <style>
@@ -10,17 +15,13 @@
 </style>
 </head>
 <body>
-<?php
- include('../giaodien/header.php');
- include('../giaodien/menu.php');
-?>
 
 <div class="chaba">
 <div class="newscontetn">
 <div class="content">
 <div class="description">
 <?php
-include('../admin/modules/connect.php');
+
 	$sql_lietkenews="select * from tin_tuc where tt_ma=$_GET[ma_tt]";
 	$row_lietkenews=mysql_query($sql_lietkenews);
 	  while($dong=mysql_fetch_array($row_lietkenews)){
@@ -51,7 +52,7 @@ include('../admin/modules/connect.php');
 	  while($dong=mysql_fetch_array($row_lietkenews1)){
 
 ?>
-<li><a href="link"><?php echo $dong['tt_tieude'] ?></a></li>
+<li style="margin-bottom:10px;"><a href="link" style='text-decoration:none !important;'><?php echo $dong['tt_tieude'] ?></a></li>
 
  <?php
 

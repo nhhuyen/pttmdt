@@ -8,6 +8,7 @@
 			margin:auto;
 			text-align:center;
 			padding-bottom:7px;
+			color: white;
 		} 
 		
 		.bn{
@@ -22,19 +23,22 @@
 		
 		.a td{
 			padding:0px;
-			padding-left:12px;
+			padding-left:22px;
+			padding-bottom: 7px;
 			padding-top:7px;
 		}
 		.tieude{
-			font-size:20px;
-			color:red;
+			font-size:18px;
+			
 			margin: 0;
+			color: white;
 		}
 		
 		.lbrd{
 			font-size:20px;
 			margin:0px 30px 0px 0px;
 			font-weight:normal;
+			color: white;
 		}
 		
         .a{
@@ -46,9 +50,9 @@
             z-index:1;
         }
 		.table_1{
-			background-color: rgba(16,54,103,0.8);
-			width: 490px;
-			
+			background-color: #02122c;
+			width: 520px;
+			height:395px;
 			display:block;
 			padding-left:0px;
 		}
@@ -81,20 +85,60 @@
 			font-size: 20px;
 			font-weight:bold;
 			border-radius:10px;
-			border: 2px solid #FF0004;
-			background-color: greenyellow;
-			color: blueviolet; 
+			background-color: #00a698;
+			color: white; 
 		}
 		
     </style>
 	<?php
 	
-	$conn=mysql_connect('127.0.0.1','root','')
-	or die(mysql_error());
-	$db=mysql_select_db("pttmdt",$conn)
-	or die(mysql_error());
-	mysql_set_charset('UTF8',$conn);
-	?>
+	include('../modules/connect.php');	
+	if(isset($_POST['san_bay_di'])){
+		$_SESSION['san_bay_di']	= $_POST['san_bay_di'];
+		$_SESSION['san_bay_den']= $_POST['san_bay_den'];
+		$_SESSION['ngay_di'] 	= $_POST['ngay_di'];	
+		$_SESSION['loai_ve'] 	= $_POST['loai_ve'];
+		$_SESSION['ng_lon'] 	= $_POST['quant1'];
+		$_SESSION['tre_em'] 	= $_POST['quant2'];
+		$_SESSION['em_be'] 		= $_POST['quant3'];
+		$_SESSION['khuhoi'] 	= $_POST['khuhoi'];
+		$_SESSION['ngay_ve']	= "";
+		if($_SESSION['khuhoi'] == 1){
+			$_SESSION['ngay_ve'] = $_POST['ngay_ve'];	
+		}
+	}
+	
+		$san_bay_di = $_SESSION['san_bay_di'];
+		$san_bay_den= $_SESSION['san_bay_den'];
+		$ngay_di 	= $_SESSION['ngay_di'];	
+		$loai_ve 	= $_SESSION['loai_ve'];
+		$ng_lon 	= $_SESSION['ng_lon'];
+		$tre_em 	= $_SESSION['tre_em'];
+		$em_be 		= $_SESSION['em_be'];
+		$khuhoi 	= $_SESSION['khuhoi'];
+		$ngay_ve	= $_SESSION['ngay_ve'];
+	
+	if($khu_hoi==1){
+		$ngay_ve = $_SESSION['ngay_ve'];	
+	}
+	//Cắt chuổi	
+	$sb_di=substr($san_bay_di,0,strpos($san_bay_di,"-"));
+	$sb_den=substr($san_bay_den,0,strpos($san_bay_den,"-"));
+	$tp_di=substr($san_bay_di,strpos($san_bay_di,"-")+2);
+	$tp_den=substr($san_bay_den,strpos($san_bay_den,"-")+2);
+	
+	//Lấy mã sân bay đi
+	$sqlsb="select * from san_bay where sb_ten='$sb_di'";
+	$rowsb = mysql_query($sqlsb);
+	$dongsb=mysql_fetch_array($rowsb);
+	$sb_ma_di=$dongsb['sb_ma'];
+	
+	//Lấy mã sân bay đến
+	$sqlsb="select * from san_bay where sb_ten='$sb_den'";
+	$rowsb = mysql_query($sqlsb);
+	$dongsb=mysql_fetch_array($rowsb);
+	$sb_ma_den= $dongsb['sb_ma'];
+	?>	
 	
 	<link rel="stylesheet" href="../css/tanggiam.css"><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -142,10 +186,15 @@
 		
 		function off_ngay_ve() {
 			document.getElementById("ngay_ve").disabled="disabled";
-			document.getElementById("ngay_ve").value="--/--/----";
+			
 		}
 		function on_ngay_ve() {
 			document.getElementById("ngay_ve").disabled="";
+		}
+		function ngdi(){
+			var ndi = document.getElementById("ngay_di").value;				
+		//	document.getElementById("ngay_ve").value=ndi;
+			$("#ngay_ve").datepicker("option", "minDate", ndi);
 		}
 	</script>
 	
@@ -229,13 +278,24 @@
     $(function() {
        $( ".datepicker" ).datepicker( $.datepicker.regional[ "vi" ] );
     });
+	$(function() {
+		$(".datepicker").datepicker("option", "minDate", 0);
+	});	
+	
 </script>
-
+<script>
+	var khuhoi= <?php echo $khuhoi; ?>;
+	$(function(){
+		if(khuhoi == 1)
+		document.getElementById('2chieu').checked='checked';
+		document.getElementById('ngay_ve').disabled='';
+	});
+</script>
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />-->
 
 
 </head>
-<body>
+<body style='overflow-x:hidden;'>
  
 
 <script src="js/jquery-1.11.1.min.js"></script>
@@ -244,7 +304,7 @@
 	<div class="a">
 		<table border="0" class="table_1">
 			<tr>
-				<td colspan="6" style="border-bottom:2px solid yellow">
+				<td colspan="6" style="border-bottom:2px solid #00a698">
 					<p class="tieudecb"><img src="" />TÌM CHUYẾN BAY</p>
 				</td>
 			</tr>
@@ -252,70 +312,81 @@
 				<td colspan="6">
 					<div id="radio-group">
 						<input type="radio" class="btnrd" id="1chieu" onclick="off_ngay_ve()" name="khuhoi" value="0" checked="checked"> <label class="lbrd">Một chiều</label>
-						<input type="radio" class="btnrd" id="2chieu" onclick="on_ngay_ve()" name="khuhoi" value="1"> <label class="lbrd">Khứ hồi</label><br>
+						<input type="radio" class="btnrd" id="2chieu" onclick="on_ngay_ve()" name="khuhoi" value="1"> <label class="lbrd">Khứ hồi</label>
+						<label style="margin-right:5px;" class="lbrd">Loại vé:</label>
+						<select name='loai_ve'>
+							<option value='all'>Tất cả</option>
+						<?php
+							$resultdv = mysql_query("SELECT * FROM loai_ve",$conn);
+							while ($rowdv = mysql_fetch_array($resultdv)){
+								echo "<option value='".$rowdv['lv_ma']."'>".$rowdv['lv_ten']."</option>";}
+						?>
+						
+						</select>
+						<br>
 					</div>
 				</td>
 			</tr>
 			<tr>
 			  	<td colspan="3">
-					<p class="tieude">TỪ:</p>	
-					<input class="box" name="san_bay_di" id="san_bay_di" placeholder="Thành phố đi">
+					<p class="tieude">Từ:</p>	
+					<input class="box" name="san_bay_di" id="san_bay_di" placeholder="Thành phố đi" value=<?php echo "'".$san_bay_di."'" ?> requiped>
 				</td>
 				<td colspan="3">
-					<p class="tieude">ĐẾN:</p>
-					<input class="box" name="san_bay_den" id="san_bay_den" placeholder="Thành phố đến">
+					<p class="tieude">Đến:</p>
+					<input class="box" name="san_bay_den" id="san_bay_den" placeholder="Thành phố đến" value=<?php echo "'".$san_bay_den."'" ?> requiped>
 				</td>
 			</tr>
 			<tr>	
 				<td colspan="3">
-					<p class="tieude">KHỞI HÀNH:</p>
-					<input type="text" name="ngay_di" class="datepicker" autocomplete="off">
+					<p class="tieude">Khởi hành:</p>
+					<input type="text" name="ngay_di" id="ngay_di" class="datepicker" onchange="ngdi()" autocomplete="off" value=<?php echo "'".$ngay_di."'" ?> requiped>
 				</td>
 				<td colspan="3">
-					<p class="tieude">VỀ:</p>
-						<input type="text"  name="ngay_ve" class="datepicker" autocomplete="off" disabled="disabled" id="ngay_ve" value="--/--/----">
+					<p class="tieude">Về:</p>
+						<input type="text"  name="ngay_ve" class="datepicker" autocomplete="off" disabled="disabled" id="ngay_ve" value=<?php echo "'".$ngay_ve."'" ?>>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<p class="tieude">NGƯỜI LỚN:</p> 
+					<p class="tieude">Người lớn:</p> 
 					<div style="width:auto;margin:0px;padding:0px;" class="container"> 
 					 <div class="row"> 
 					  <div class="col-md-3"> 
 					   <div class="input-group"> 
 							<span class="input-group-btn">
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
-							<input  style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 1px;border:1px;" name="quant[1]" class="form-control input-number" value="0" min="0" max="10" type="text" autocomplete="off"> 
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant1"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
+							<input  style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 1px;border:1px;" name="quant1" class="form-control input-number" value="<?php echo $ng_lon ?>" min="0" max="10" type="text" autocomplete="off"> 
 							<span class="input-group-btn">    
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant1"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
 					   </div> 
 					  </div> 
 					 </div>
 					</div>
 				</td>
 				<td colspan="2">
-					<p class="tieude">TRẺ EM:</p> 
+					<p class="tieude">Trẻ em:</p> 
 					<div style="width:auto;margin:0px;padding:0px;" class="container"> 
 					 <div class="row"> 
 					  <div class="col-md-3"> 
 					   <div class="input-group"> <span class="input-group-btn">
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[2]"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
-							<input style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 2px;border:1px;" name="quant[2]" class="form-control input-number" value="0" min="0" max="10" type="text" autocomplete="off"> <span class="input-group-btn">    
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant2"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
+							<input style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 2px;border:1px;" name="quant2" class="form-control input-number" value="<?php echo $tre_em ?>" min="0" max="10" type="text" autocomplete="off"> <span class="input-group-btn">    
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant2"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
 					   </div> 
 					  </div> 
 					 </div>
 					</div>
 				</td>
 				<td colspan="2">
-					<p class="tieude">EM BÉ:</p>
+					<p class="tieude">Em bé:</p>
 					<div style="width:auto;margin:0px;padding:0px;z-index:1;position:relative;" class="container"> 
 					 <div class="row"> 
 					  <div class="col-md-3"> 
 					   <div class="input-group"> <span class="input-group-btn">
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[3]"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
-							<input style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 1px;border:1px;" name="quant[3]" class="form-control input-number" value="0" min="0" max="10" type="text" autocomplete="off"> <span class="input-group-btn">    
-							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[3]"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin:0px 3px;" type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant3"> <span class="glyphicon glyphicon-minus"></span> </button> </span> 
+							<input style="width:35px;height:30px;background-color:rgba(0,0,0,0);margin:3px 1px;border:1px;" name="quant3" class="form-control input-number" value="<?php echo $em_be ?>" min="0" max="4" type="text" autocomplete="off"> <span class="input-group-btn">    
+							<button style="width:30px;height:30px;padding:0px;border-radius:20px;margin-right:3px;" type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant3"> <span class="glyphicon glyphicon-plus"></span> </button>    </span> 
 					   </div> 
 					  </div> 
 					 </div>
@@ -329,7 +400,7 @@
 			</tr>
 			
 		</table>
-  </div>	
+  </div></div>	
 </form>	
 </body>
 </html>

@@ -76,7 +76,7 @@ if (isset($_POST['dangnhap']))
                     <td>
                         <input type="submit" name="dangnhap" value="Đăng Nhập">
                         <input type="reset" value="Làm lại">
-                        <a href="dk.php" target="_blank">Tạo Tài Khoản?</a>
+                        <a href="dk.php" target="_blank">Tạo Tài Khoản</a>
                     </td>
                 </tr>
             </table>

@@ -1,0 +1,80 @@
+<!DOCTYPE >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="vi-vn" lang="vi-vn">
+<head>
+<style type="text/css">
+<!--
+#slideCont {
+  border:solid 1px #000;
+  text-align:center;
+}
+
+#slideCont img {
+  margin: 5px;
+}
+-->
+</style>
+
+<script type="text/javascript">
+
+function clip() {
+  // width of the banner container
+  var contWidth = 425;
+  // height of the banner container
+  var contHeight = 90;
+
+  var id1 = document.getElementById('slideA');
+  var id2 = document.getElementById('slideB');
+
+  id1.style.left = parseInt(id1.style.left)-1 + 'px';
+  
+  document.getElementById('slideCont').style.width = contWidth + "px";
+  document.getElementById('slideCont').style.clip = 'rect(auto,'+ contWidth +'px,' + contHeight +'px,auto)';
+  id2.style.display = '';
+  if(parseFloat(id1.style.left) == -(contWidth))  {
+   id1.style.left = '0px';
+  }
+  setTimeout(clip,25)
+}
+
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
+
+addLoadEvent(function() {
+  clip();
+});
+//-->
+</script>
+        </head>
+
+
+
+<body>
+
+<div id="slideCont" style="clip: rect(auto, 425px, 90px, auto); height: 90px; overflow: hidden; position: relative; top: 0px; width: 425px; z-index: 1;">
+<div id="slideA" style="height: 90px; left: -194px; overflow: hidden; position: absolute; top: 0px; width: 850px; z-index: 1;">
+<div id="innerSlideA" style="float: left;">
+<a href="http://www.apache.org/"><img border="0" height="100" src="https://3.bp.blogspot.com/-RLeW_UxhPvA/UyGMLS1d0FI/AAAAAAAAABI/1PxdbOdxj3Y/s1600/lo-go-viet-nam-airline.jpg" width="126" /></a>
+   <a href="http://www.haan.net/"><img border="0" height="100" src="https://res.flynow.vn/cdn/flynow/images/icon/icon-pc/logo.png" width="126" /></a>
+   <a href="http://www.mysql.com/"><img border="0" height="100" src="https://thegioivere.net/FileUpload/Jetstar-Logo-WEB-Master-For.gif" width="126" /></a>
+
+  </div>
+<div id="slideB" style="height: 90px; left: 0px; overflow: hidden; position: relative; top: 0px; width: 425px; z-index: 1;">
+<a href="http://www.apache.org/"><img border="0" height="44" src="https://vemaybaygiarebuulong.com/image/data/logo/Logo-Vietjet.png" width="126" /></a>
+   <a href="http://www.haan.net/"><img border="0" height="60" src="https://maybaygiare.vn/public/logo.png" width="120" /></a>
+   <a href="http://www.mysql.com/"><img border="0" height="44" src="https://www.vinajet.vn/wp-content/uploads/2019/05/AVATAR-VINAJET-FULL.png" width="126" /></a>
+  </div>
+</div>
+</div>
+</body>
+</html>

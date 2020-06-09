@@ -1,0 +1,158 @@
+.full{
+	width:100%;
+	height:100%;
+}
+.header{
+	background-color:#ffffff;
+	width:100%;
+	height:100px;
+	margin:0px;
+}
+
+.tbheader td{
+
+	padding-top:20px;
+}
+
+
+.btdangnhap{
+	width:110px;
+	margin-left:35px;
+	margin-top:25px;
+	border-radius:10px;
+	padding:10px;
+	background-color:#ccc;
+	border:1px solid #00a698;
+	text-decoration: none!important;
+	display:block;
+	color:#00a698;
+	font-weight:bold;
+	text-align:center;
+}
+
+.btdangnhap:hover{
+	background-color:#00a698;
+	color:white;
+	border:1px solid #ccc;
+}
+
+.logo{
+	width:auto;
+	margin-left:50px;
+}
+
+.hotline{
+	margin-top:0px;
+	margin-left:30px;
+	float:right;
+}
+
+.hotline-text{
+margin-top:7px;
+margin-right: 4px;
+color: #00a698;
+font-weight: 700;
+text-align: center;
+border-bottom: 1px solid #00a698;
+
+}
+.hotline-top{
+color: #00a698;
+font-size: 25px;
+margin-left:13px;
+}
+#menu li {
+font-size:20px;
+  color: #f1f1f1;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  
+}
+#menu ul {
+	height:50px;
+   background:#007369;
+  list-style-type: none;
+  text-align: center;
+}
+#menu a {
+	padding : 0 30px;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+#menu a:hover {
+  background: #F1F1F1;
+  color: #333;
+}
+/*phan card*/
+
+.phantren{
+	width:100%;
+	height:auto;
+	
+	
+	
+}
+.banner{
+	width:100%;
+	height:auto;
+	background-color: rgba(0,0,0,0);
+}
+.phantintuc{
+	width:100%;
+	height:auto;
+}
+
+.content{
+
+	width:100%;
+	height:480px;
+	background-color:#f1f2f8;
+	
+}
+.content_left{
+	width:40%;
+	height:400px;
+	float:left;
+	
+	margin-left:160px;
+}
+.content_right{
+	width:50%;
+	height:500px;
+	float:right;
+	
+	
+	
+
+}
+.tintuc{
+	padding-top:0px;
+	width:100%;
+	height:auto;
+	background-size:100%;
+	background-color:#f1f2f8;
+	background-repeat:no-repeat;
+}
+.new{
+	width:100px;
+	height:100px;
+	background:#ffffff;
+}
+.phanduoi{
+	width:100%;
+	height:300px;
+
+}
+.logodoitac{
+	width:100%;
+	height:134px;
+	background-color:#ffffff;
+	
+}
+.footer{
+		background-color:#00FFFF;
+		
+}
+
